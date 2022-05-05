@@ -19,8 +19,9 @@ include = [
 python = "^3.8"
 pydantic = "^1.8"
 tqdm = ">=4"
-rich = ">=10"
+rich = ">=12"
 requests = ">=2"
+ipywidgets = "^7.6.0"
 
 [tool.poetry.dev-dependencies]
 black = "*"

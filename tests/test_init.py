@@ -1,6 +1,9 @@
+import time
+
 from simple_downloader import download
 
 
-def test_download():
+def test_download(tmp_path):
     # TODO: Add tests!
-    assert True
+    fp = download("http://speedtest.ftp.otenet.gr/files/test1Mb.db", tmp_path)
+    assert fp.exists()
