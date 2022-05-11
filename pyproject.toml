@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simple_downloader"
-version = "0.1.1"
+version = "0.1.2"
 description = "A very simple downloader package with a visual indication."
 authors = ["Kai Norman Clasen <k.clasen@protonmail.com>"]
 license = "MIT license"
