@@ -17,4 +17,4 @@ serve-docs: build
 	{{env-cmd}} python {{justfile_directory()}}/serve_docs.py
 
 test:
-	{{env-cmd}} pytest tests/
+	{{env-cmd}} pytest -s tests/
