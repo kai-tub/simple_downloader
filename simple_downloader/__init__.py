@@ -34,11 +34,15 @@ progress = Progress(
 
 
 @validate_arguments
-def download(url: AnyHttpUrl, target_dir: DirectoryPath, force: bool = False) -> Path:
+def download(url: AnyHttpUrl, target_dir: Path, force: bool = False) -> Path:
     """
     Download the file from `url` to the `target_dir`, where the name is the name of the downloaded file.
     The path to the downloaded file is returned.
+
+    The `target_dir` is created if the folder/path to the folder doesn't exists.
     """
+    if not target_dir.exists():
+        target_dir.mkdir(parents=True)
     file_name = Path(urlparse(url).path).name
     target_file = target_dir / file_name
     if target_file.exists() and not force:
