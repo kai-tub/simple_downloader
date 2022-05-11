@@ -43,6 +43,8 @@ def download(url: AnyHttpUrl, target_dir: Path, force: bool = False) -> Path:
     """
     if not target_dir.exists():
         target_dir.mkdir(parents=True)
+    if not target_dir.is_dir():
+        raise ValueError("Path must be directory!")
     file_name = Path(urlparse(url).path).name
     target_file = target_dir / file_name
     if target_file.exists() and not force:
